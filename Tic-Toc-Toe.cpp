@@ -1,7 +1,7 @@
 #include<iostream>
 #include<conio.h>
 #include<fstream>
-
+//mobin mirzaei//
 
 using namespace std;
 
@@ -176,5 +176,4 @@ int checkwin()
 	else
 		return -1;
 }
-/////
 
