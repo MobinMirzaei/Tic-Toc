@@ -138,11 +138,28 @@ int main ()
 		system("cls");
 		for(int i=0 ;i<u+2;i++)
 		{
-			//zint t=0;
+			int idx=0,hashem=0;
+			int tekrar[100];
+			for(int r;r<100;r++)
+			{
+				tekrar[r]=-1;
+			}
+			for(int j=i+1;j<u+2 ;j++)
+			{
+				if(pp[j].name==pp[i].name){
+					pp[i].win+=pp[j].win;
+					pp[i].tas+=pp[j].tas;
+					tekrar[j]=j;
+					//hashem+=1;
+				}
+			}
+			if(i==tekrar[i])
+				continue;
+			else
+				cout << endl<<pp[i].name<<"\nbord :"<<pp[i].win<<"\ntasavi :"<<pp[i].tas<<endl<<"--------"<<endl;
 			
-			cout << endl<<pp[i].name<<"\nbord :"<<pp[i].win<<"\ntasavi :"<<pp[i].tas<<endl<<"--------"<<endl;
-			
-		}
+		}	
+		
 		getch();
 		cin.get();
 		system("cls");
@@ -153,6 +170,12 @@ int main ()
 	else if(a==3){
 		cout << "Have A Good Day!";
     	exit(0);	
+	}
+	else{
+		cout<<endl<<"Please enter correct num \n";
+		getch();
+		system("cls");
+		main();
 	}
 	
 }
