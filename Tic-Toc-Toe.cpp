@@ -6,7 +6,6 @@
 using namespace std;
 
 
-void menu();
 void board();
 int mantegh();
 void upboard();
@@ -139,6 +138,8 @@ int main ()
 		system("cls");
 		for(int i=0 ;i<u+2;i++)
 		{
+			//zint t=0;
+			
 			cout << endl<<pp[i].name<<"\nbord :"<<pp[i].win<<"\ntasavi :"<<pp[i].tas<<endl<<"--------"<<endl;
 			
 		}
@@ -155,7 +156,7 @@ int main ()
 	}
 	
 }
-
+/////
 void board()
 {
 	system("cls");
@@ -193,7 +194,7 @@ int mantegh()
 	else
 		return -1;
 }
-
+///
 void upboard()
 {
 	arra[0]= '0';
