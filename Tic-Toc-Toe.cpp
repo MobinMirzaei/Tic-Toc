@@ -7,17 +7,18 @@ using namespace std;
 
 
 void menu();
-int checkwin();
 void board();
+int mantegh();
+void upboard();
+
 
 struct player{
 	string name;
 	int win=0;
 	int tas=0;
-
 };
 
-char arra[10]= {'o','1','2','3','4','5','6','7','8','9'};
+char arra[10]= {'0','1','2','3','4','5','6','7','8','9'};
 int u=-2;
 player pp[100];
 
@@ -93,8 +94,9 @@ int main ()
 				cout<<"error!\nenter num ";
 				player--;
 				getch();
-			}
-			i=checkwin();
+				cin.get();		
+					}
+			i=mantegh();
 			player++;
 			}while(i==-1);
 		board();
@@ -103,11 +105,17 @@ int main ()
 			if(player%2==1){
 				cout << pp[u].name<< " win ";
 				pp[u].win+=1;
+				getch();
+				cin.get();
+				
 			}
 				
 			else{
 				cout << pp[u+1].name<< " win ";
 				pp[u+1].win+=1;
+				getch();
+				cin.get();
+				
 			}
 		}
 		
@@ -115,20 +123,29 @@ int main ()
 			cout<<"==>\aGame draw";
 			pp[u].tas+=1;
 			pp[u+1].tas+=1;
+			getch();
+			cin.get();
+				
 		}
 			
 		getch();
 		system("cls");
 		
+		upboard();
 		main();
 			}
 			
 	else if(a==2){
+		system("cls");
 		for(int i=0 ;i<u+2;i++)
 		{
 			cout << endl<<pp[i].name<<"\nbord :"<<pp[i].win<<"\ntasavi :"<<pp[i].tas<<endl<<"--------"<<endl;
+			
 		}
 		getch();
+		cin.get();
+		system("cls");
+	
 		main();
 	}
 	
@@ -153,7 +170,7 @@ void board()
 
 
 
-int checkwin()
+int mantegh()
 {
 	if (arra[1] == arra[2] && arra[2] == arra[3])
 		return 1;
@@ -177,3 +194,16 @@ int checkwin()
 		return -1;
 }
 
+void upboard()
+{
+	arra[0]= '0';
+	arra[1]= '1';
+	arra[2]= '2';
+	arra[3]= '3';
+	arra[4]= '4';
+	arra[5]= '5';
+	arra[6]= '6';
+	arra[7]= '7';
+	arra[8]= '8';
+	arra[9]= '9';
+}
